@@ -1,0 +1,325 @@
+#anime{
+    .swiper {
+        @include Img($wid:100%,$heit:100%,$pos:relative);
+        .text{
+            @media (max-width:1024px) { 
+                @include Img($pos:absolute,$top:5%,$left:0);
+                padding: 0px 50px;
+             }
+            padding: 0px 186px;
+            @include Img($pos:absolute,$top:15%,$left:50px,$z_index:999);
+            h2{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:41px,$l_heit:55px);
+                font-family: 'Playfair Display', serif;
+                span{ color: $red_color; }
+            }
+            .one{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:17px,$l_heit:29px,$colrs:$dark_gray);
+                font-family: 'Lora', serif;
+                padding: 20px 0px;
+            }
+            .sara{ @include Img($wid:197px,$heit:56px); }
+        }
+        .swiper-slide {
+            @include Flex($j_content:center,$a_items:center,$f_direction:column);
+            img{
+                @include Img($wid:$width_100,$o_fit:cover,$heit:477px);
+                transform: scale(1);
+                animation: scale 9s linear infinite;
+                @keyframes scale {
+                    0%{ transform: scale(1.01); }
+                    20%{ transform: scale(1.03); }
+                    40%{ transform: scale(1.05); }
+                    60%{ transform: scale(1.07); }
+                    80%{ transform: scale(1.09); }
+                }
+            }
+            p{
+                padding: 30px 0px;
+                width: 613px;
+                @include Text($f_size:24px,$f_weight:$weight_400,$l_heit:36px,$f_style:italic,$t_align:center,$colrs:$swiper);
+                font-family: 'Lora', serif;
+            }
+            .one{ @include Text($f_size:12px,$f_weight:$weight_500,$l_heit:24px,$f_style:normal,$colrs:$b1_color); }
+            
+        }
+        .swiper-button-next{
+            @media (max-width:768px) { display: none; }
+            i{
+                @include Text($f_size:40px,$colrs:$i_color);
+                transition: .3s ease-in-out;
+                &:hover{ color: $b1_color; }
+            }
+            &::after{ content: ''; }
+        }
+        .swiper-button-prev{
+            @media (max-width:768px) { display: none; }
+            i{
+                @include Text($f_size:40px,$colrs:$i_color);
+                transition: .3s ease-in-out;
+                &:hover{ color: $b1_color; }
+            }
+            &::after{ content: ''; }
+        }
+      }
+}
+#flower{
+    padding: 50px 0px;
+    .container{
+        .list{
+            ul{
+                @media (max-width:768px) {
+                    display: none;
+                }
+                @include Flex($a_items:center,$gap:40px);
+                li{
+                    .fix{ color: $red_color; }
+                    a{
+                        @include Text($t_decoration:none,$f_size:$tag_size,$l_heit:24px,$f_weight:$weight_500,$f_style:normal,$colrs:$b1_color);
+                        transition: .3s ease-in-out;
+                        &:hover{ color: $red_color; }
+                    }
+                }
+            }
+        }
+        .img{
+            @include Img($wid:$width_100);
+            img{
+                @include Img($wid:$width_100,$heit:100%,$o_fit:cover,$o_pos:center);
+                transform: scale(1);
+                transition: .3s ease-in-out;
+                padding: 20px 0px;
+                &:hover{
+                    transform: scale(1.04);
+                }
+            }
+        }
+        .text{
+            text-align: center;
+            h6{
+                @include Text($f_weight:$weight_500,$f_size:12px,$l_heit:12px,$f_style:normal);
+            }
+            a{
+                @include Text($t_decoration:none,$f_style:normal,$f_weight:$weight_400,$f_size:12px,$l_heit:12px,$colrs:$gray_color);
+               display: none;
+            }
+            p{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:12px,$l_heit:12px,$colrs:$gray_color);
+            }
+        }
+    }
+}
+#video{
+    background-color: $sub_color;
+    padding: 50px 0px;
+    .img{
+        @include Img($wid:$width_100,$flow:hidden,$pos:relative);
+        img{
+            @include Img($wid:$width_100,$heit:100%,$o_fit:cover,$o_pos:center);
+            transform: scale(1);
+            transition: .3s ease-in-out;
+            &:hover{ transform: scale(1.04); }
+        }
+        button{
+            @include Img($pos:absolute,$top:35%,$left:40%,$wid:100px,$heit:100px);
+            @include Flex($j_content:center,$a_items:center);
+            @include Text($radius:50px,$ground:$white_color,$border:1px);
+            i{
+                @include Text($colrs:$red_color,$f_size:30px);
+            }
+        }
+        .modal {
+            @include Img($pos:fixed,$z_index:999,$left:0,$top:0,$wid:100%,$heit:100%,$flow:auto);
+            display: none; 
+            padding-top: 100px; 
+            background-color: rgba(0,0,0,0.4); 
+            .modal-content {
+                @include Text($ground:none,$border:none);
+                margin: auto;
+                width: 50%;
+                @media (max-width:768px) { width: 100%; }
+              }
+          }
+    }
+    .text{
+        padding: 0px 90px;
+        h2{
+            @include Text($f_style:normal,$f_weight:$weight_400,$f_size:38px,$l_heit:55px);
+            font-family: 'Playfair Display', serif;
+            span{ color: $red_color; }
+        }
+        .one{
+            @include Text($f_style:normal,$f_weight:$weight_400,$f_size:17px,$l_heit:29px,$colrs:$dark_gray);
+            font-family: 'Lora', serif;
+            padding: 20px 0px;
+        }
+        .heart{
+            @include Flex($a_items:center,$gap:10px);
+            padding: 10px 0px;
+            .two{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:17px,$l_heit:29px,$colrs:$dark_gray);
+                margin: 0;
+            }
+        }
+    }
+}
+#human{
+    .container{
+        .text{
+            padding: 50px 0px;
+            margin-left: 25%;
+            width: 50%;
+            text-align: center;
+            h2{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:38px,$l_heit:55px,$colrs:$h2_color);
+                font-family: 'Playfair Display', serif;
+            }
+            p{
+                @include Text($colrs:$dark_gray,$f_style:normal,$f_weight:$weight_400,$f_size:17px,$l_heit:29px);
+                font-family: 'Lora', serif;
+            }
+        }
+        .img{
+            img{ @include Img($wid:100%,$o_fit:cover,$o_pos:center); }
+        }
+        .txt{
+            text-align: center;
+            padding: 30px 0px;
+            h6{ @include Text($f_style:normal,$f_weight:$weight_500,$f_size:$tag_size,$l_heit:24px,$colrs:$b1_color); }
+            span{ @include Text($colrs:$gray_color,$f_size:$tag_size,$l_heit:$line_h,$f_weight:$weight_500,$f_style:normal); }
+        }
+    }
+}
+#fixed{
+    @include Flex($j_content:center,$a_items:center);
+    @include Img($wid:$width_100,$heit:600px);
+    @include Ground($ground_pos:center,$ground_size:cover,$ground_attachment:fixed,$ground_repet:no-repeat);
+    .container{
+        @include Flex($j_content:center,$a_items:center,$f_direction:column);
+        h3{
+            @include Text($f_size:30px,$l_heit:42px,$f_weight:$weight_400,$f_style:normal,$colrs:$white_color);
+            font-family: 'Playfair Display', serif;
+            // padding: 30px 0px;
+        }
+        form{
+            display: flex;
+            @media (max-width:768px) { width: 100%; }
+            .white{
+                padding: 22px 19px 23px;
+                @include Img($wid:467px,$heit:60px);
+                @include Text($ground:$white_color,$border:1px solid $color_e8,$f_style:normal,$f_weight:$weight_400,$l_heit:15px,$f_size:12px,$colrs:$color95);
+            }
+            .red{
+                padding: 0.5px 43.1656px 0px 43.3656px;
+                @include Img($wid:169px,$heit:60px);
+                @include Text($border:1px,$ground:$red_color,$f_style:normal,$f_weight:$weight_500,$f_size:12px,$l_heit:60px,$colrs:$white_color);
+            }
+        }
+        #text{
+            display: block;
+            font-weight: 500;
+            padding: 5px;
+            font-style: italic;
+            
+        }
+    }
+}
+#blog{
+    background: $sub_color;
+    padding: 20px 0px;
+    .container{
+        .txt{
+            padding: 50px 0px;
+            margin-left: 25%;
+            width: 50%;
+            text-align: center;
+            h2{
+                @include Text($f_style:normal,$f_weight:$weight_400,$f_size:38px,$l_heit:55px,$colrs:$h2_color);
+                font-family: 'Playfair Display', serif;
+            }
+            p{
+                @include Text($colrs:$dark_gray,$f_style:normal,$f_weight:$weight_400,$f_size:17px,$l_heit:29px);
+                font-family: 'Lora', serif;
+            }
+        }
+        .all{
+            @include Img($pos:relative,$wid:$width_100,$flow:hidden);
+            .img{
+                @include Img($wid:$width_100,$flow:hidden,$pos:relative);
+                img{
+                    @include Img($wid:100%,$heit:100%,$o_fit:cover,$o_pos:center);
+                    transform: scale(1);
+                    transition: .3s ease-in-out;
+                    &:hover{ transform: scale(1.04); }
+                }
+                .pos{
+                    @include Img($pos:absolute,$heit:25px,$right:312px,$top:10px,$left:10px);
+                    @include Text($t_align:center,$ground:$bc_color);
+                    a{
+                        @include Text($t_decoration:none,$colrs:$black_color,$f_size:10px,$f_style:normal,$f_weight:$weight_500,$l_heit:10px);
+                        transition: .2s ease-in-out;
+                        &:hover{ color: $red_color; }
+                    }
+                }
+            }
+            .text{
+                text-align: center;
+                padding: 30px 0px;
+                a{
+                    @include Text($f_style:normal,$f_size:22px,$f_weight:$weight_400,$l_heit:30px,$t_decoration:none,$colrs:$h2_color);
+                    font-family: 'Playfair Display', serif;
+                }
+                p{
+                    @include Text($colrs:$dark_gray,$f_style:normal,$f_weight:$weight_400,$f_size:15px,$l_heit:24px);
+                    font-family: 'Lora', serif;
+                }
+            }
+        }
+    }
+}
+#swiper{
+    .container{
+        max-width: 960px;
+        height: 506px;
+        .swiper {
+            @include Img($wid:100%,$heit:100%);
+            .swiper-slide {
+                @include Flex($j_content:center,$a_items:center,$f_direction:column);
+                img{
+                    @include Img($wid:87px,$heit:87px,$o_fit:cover);
+                    display: block;
+                }
+                p{
+                    padding: 30px 0px;
+                    width: 613px;
+                    @include Text($f_size:24px,$f_weight:$weight_400,$l_heit:36px,$f_style:italic,$t_align:center,$colrs:$swiper);
+                    font-family: 'Lora', serif;
+                }
+                .one{
+                    @include Text($f_size:12px,$f_weight:$weight_500,$l_heit:24px,$f_style:normal,$colrs:$b1_color);
+                }
+                .two{
+                    @include Text($colrs:$gray_color,$f_size:$tag_size,$l_heit:$line_h,$f_weight:$weight_500,$f_style:normal);
+                }
+            }
+            .swiper-button-next{
+                @media (max-width:768px) { display: none; }
+                i{
+                    @include Text($f_size:40px,$colrs:$i_color);
+                    transition: .3s ease-in-out;
+                    &:hover{ color: $b1_color; }
+                }
+                &::after{ content: ''; }
+            }
+            .swiper-button-prev{
+                @media (max-width:768px) { display: none; }
+                i{
+                    @include Text($f_size:40px,$colrs:$i_color);
+                    transition: .3s ease-in-out;
+                    &:hover{ color: $b1_color; }
+                }
+                &::after{ content: ''; }
+            }
+          }
+    }
+}
